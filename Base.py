@@ -1,4 +1,5 @@
 import os
+import subprocess
 
 
 class BasemodClass:
@@ -24,8 +25,12 @@ class BasemodClass:
         with open(ReadCrear, "w", encoding="utf-8"):
             pass
 
+    def CrearRepo(self):
+        subprocess.run(["git", "-C", self.path, "init"])
+
 
 # cc = BasemodClass()
 # cc.CrearCarpeta("pepe")
 # cc.CrearPy("albion")
 # cc.CrearRead()
+# cc.CrearRepo()
