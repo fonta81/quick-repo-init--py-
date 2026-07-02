@@ -37,13 +37,34 @@ class BasemodClass:
             print(f"Error: {e}")
 
     def Usuario(self):
+        print("\n")
         self.CrearCarpeta(input("Digite el nombre de la carpeta a crear: "))
+        print("\n")
         self.CrearPy(input("Digite el nombre del archivo python a crear: "))
         self.CrearRead()
         self.CrearRepo()
+        print("\n")
         print("El Proceso se ejecuto correctamente")
         return
 
 
-# cc = BasemodClass()
-# cc.Usuario()
+def main():  # El menu principal
+    Base = BasemodClass()
+
+    while True:
+        print("\n" + "=" * 60)
+        print("1. Iniciar")
+        print("2. Salir")
+        elige = input("Elige: ")
+
+        if elige == "2":
+            print("Saliendo...")
+            break
+        elif elige == "1":
+            Base.Usuario()
+        else:
+            print("Ingrese un valor válido")
+
+
+if __name__ == "__main__":
+    main()
