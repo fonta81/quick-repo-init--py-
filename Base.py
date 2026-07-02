@@ -22,6 +22,15 @@ class BasemodClass:
         except Exception as e:
             print(f"Error: {e}")
 
+    def CrearBash(self, NombreBash):
+        try:
+            ExtencionArchivoBash = NombreBash + ".sh"
+            BashCrear = os.path.join(self.path, ExtencionArchivoBash)
+            with open(BashCrear, "w", encoding="utf-8"):
+                pass
+        except Exception as e:
+            print(f"Error: {e}")
+
     def CrearRead(self):
         try:
             ReadCrear = os.path.join(self.path, "Readme.md")
@@ -40,7 +49,13 @@ class BasemodClass:
         print("\n")
         self.CrearCarpeta(input("Digite el nombre de la carpeta a crear: "))
         print("\n")
-        self.CrearPy(input("Digite el nombre del archivo python a crear: "))
+        elecc = input("Digite que archivo quiere crear:\n1.python \n2.bash\nElige: ")
+        if elecc == "1":
+            self.CrearPy(input("Digite el nombre del archivo python a crear: "))
+        elif elecc == "2":
+            self.CrearBash(input("Digite el nombre del archivo Bash a crear: "))
+        else:
+            print("Ingrese un valor valido ")
         self.CrearRead()
         self.CrearRepo()
         print("\n")
