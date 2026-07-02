@@ -1,4 +1,3 @@
-# como ptas hago para crear algo dentro de otra mrd
 import os
 
 
@@ -14,13 +13,19 @@ class BasemodClass:
         except Exception as e:
             print(f"Error: {e}")
 
-    def CrearPy(self, nombrepy):
-        nombre = nombrepy + ".py"
-        py = os.path.join(self.path, nombre)
-        with open(py, "w", encoding="utf=8") as archivo:
+    def CrearPy(self, NombrePy):
+        ExtencionArchivoPy = NombrePy + ".py"
+        PyCrear = os.path.join(self.path, ExtencionArchivoPy)
+        with open(PyCrear, "w", encoding="utf=8"):
+            pass
+
+    def CrearRead(self):
+        ReadCrear = os.path.join(self.path, "Readme.md")
+        with open(ReadCrear, "w", encoding="utf-8"):
             pass
 
 
 # cc = BasemodClass()
 # cc.CrearCarpeta("pepe")
 # cc.CrearPy("albion")
+# cc.CrearRead()
