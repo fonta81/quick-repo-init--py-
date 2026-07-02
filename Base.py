@@ -9,28 +9,41 @@ class BasemodClass:
     def CrearCarpeta(self, NombreCc):
         try:
             os.makedirs(NombreCc, exist_ok=True)
-            print("Creada correctamente")
             self.path = os.path.join("", NombreCc)
         except Exception as e:
             print(f"Error: {e}")
 
     def CrearPy(self, NombrePy):
-        ExtencionArchivoPy = NombrePy + ".py"
-        PyCrear = os.path.join(self.path, ExtencionArchivoPy)
-        with open(PyCrear, "w", encoding="utf=8"):
-            pass
+        try:
+            ExtencionArchivoPy = NombrePy + ".py"
+            PyCrear = os.path.join(self.path, ExtencionArchivoPy)
+            with open(PyCrear, "w", encoding="utf=8"):
+                pass
+        except Exception as e:
+            print(f"Error: {e}")
 
     def CrearRead(self):
-        ReadCrear = os.path.join(self.path, "Readme.md")
-        with open(ReadCrear, "w", encoding="utf-8"):
-            pass
+        try:
+            ReadCrear = os.path.join(self.path, "Readme.md")
+            with open(ReadCrear, "w", encoding="utf-8"):
+                pass
+        except Exception as e:
+            print(f"Error: {e}")
 
     def CrearRepo(self):
-        subprocess.run(["git", "-C", self.path, "init"])
+        try:
+            subprocess.run(["git", "-C", self.path, "init"], capture_output=True)
+        except Exception as e:
+            print(f"Error: {e}")
+
+    def Usuario(self):
+        self.CrearCarpeta(input("Digite el nombre de la carpeta a crear: "))
+        self.CrearPy(input("Digite el nombre del archivo python a crear: "))
+        self.CrearRead()
+        self.CrearRepo()
+        print("El Proceso se ejecuto correctamente")
+        return
 
 
 # cc = BasemodClass()
-# cc.CrearCarpeta("pepe")
-# cc.CrearPy("albion")
-# cc.CrearRead()
-# cc.CrearRepo()
+# cc.Usuario()
