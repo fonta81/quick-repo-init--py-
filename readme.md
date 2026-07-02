@@ -1,27 +1,25 @@
-# Repository Generator (Base.py)
+# Base Project Initializer
 
-A simple interactive Python automation tool designed to streamline project initialization. This script helps you quickly set up a new project directory, generate boilerplate development files (Python or Bash), include a default markdown file, and automatically initialize a local Git repository—all through a clean terminal interface.
+`Base.py` is a lightweight Python script designed to automate the initial setup of a project directory. It provides an interactive command-line interface to create a folder, initialize a specific file with a custom extension, generate a blank `Readme.md` file, and automatically initialize a Local Git repository within that directory.
 
 ## Features
 
-- **Automated Directory Creation**: Safely creates a target folder for your project without overwriting existing data (`exist_ok=True`).
-- **Flexible File Boilerplates**: Easily generate empty boilerplate files for:
-  - Python scripts (`.py`)
-  - Shell/Bash scripts (`.sh`)
-- **Built-in Documentation Setup**: Automatically creates a blank `Readme.md` file inside the target folder.
-- **Git Initialization**: Uses Python's `subprocess` module to automatically execute `git init` directly inside the newly created project folder.
-- **Interactive CLI**: Friendly command-line interface with a loops/menu system that guides you step-by-step.
+- **Folder Creation:** Automatically creates a target directory (handling exceptions if it already exists).
+- **Custom File Generation:** Prompts the user for a custom filename and extension (e.g., `.py`, `.js`, `.sh`, `.html`) and generates a blank file inside the new folder.
+- **Automated README Creation:** Generates an empty `Readme.md` file within the created folder.
+- **Git Repository Initialization:** Runs `git init` behind the scenes using the `subprocess` module to turn the folder into a Git repository.
+- **Interactive Menu:** Simple execution loops with an intuitive "Start / Exit" menu.
 
 ## Prerequisites
 
-- **Python**: Version 3.x or higher installed on your system.
-- **Git**: Git must be installed and added to your system's environment variables (`PATH`) for the automated repository initialization to work.
+- **Python 3.x** installed on your system.
+- **Git** installed and available in your system's PATH (required for the automated repository initialization).
 
-## How to Run
+## Usage
 
-1. Open your terminal or command prompt.
-2. Navigate to the folder containing the `Base.py` file.
-3. Run the script using the following command:
+1. Clone or copy `Base.py` into your working workspace.
+2. Open a terminal or command prompt in that location.
+3. Run the script using Python:
 
 ```bash
 python Base.py
